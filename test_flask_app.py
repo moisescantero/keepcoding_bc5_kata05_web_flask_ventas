@@ -6,10 +6,10 @@ class TestWeb(TestFlaskBase):#importar de testflaskbase para ejecutar los métod
         loquemedevuelve = self.client.get("/")#petición get para comprobar ruta /
         self.assertEqual(loquemedevuelve.status_code, 200)#comprobar la respuesta del test debe ser 200
 
-    def test_root_index_is_Hola_mundo(self):
+    def test_root_index_is_lista_regiones(self):
         loquemedevuelve = self.client.get("/")#petición get para comprobar ruta /
         self.assertEqual(loquemedevuelve.status_code, 200)#comprobar la respuesta del test debe ser 200
-        self.assertEqual(loquemedevuelve.data, b"Hola mundo")#comprobar que en index hay "Hola mundo"
+       
 
 
 
