@@ -12,6 +12,7 @@ def index():
     d = {}
     for linea in csvreader:        
         registros.append(linea)
+        if linea[0] in d:
             d[linea[0]]["ingresos"] += float(linea[11])
             d[linea[0]]["beneficios"] += float(linea[13])
         else:
