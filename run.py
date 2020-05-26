@@ -5,7 +5,7 @@ app = Flask(__name__)#creamos app
         
 @app.route("/")
 def index():
-    fVentas = open("./sales10.csv", "r")
+    fVentas = open("./sales100.csv", "r")
     csvreader = csv.reader(fVentas, delimiter= ",")
 
     registros = []
@@ -19,4 +19,4 @@ def index():
             if linea[0] != "region":
                 d[linea[0]] = {"ingresos": float(linea[11]), "beneficios": float(linea[13])}
 
-    return render_template("region.html")#método de flask para importar html
+    return render_template("region.html", ventas=d)#método de flask para importar html
