@@ -4,6 +4,9 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Global, S.L.</title>
+            <!-- Estilos para la web en CSS-->
+            <link rel="stylesheet" href="/static/style.css"><!--Enlace a la página de estilos que contiene el CSS para dar formato a html-->
+            <!--Hasta aquí estilos para la web en CSS-->
         </head>
         <body>
             <header>
@@ -18,7 +21,7 @@
                 </tr>
                 {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
                 <tr>
-                    <td>{{ region }}</td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
+                    <td class="region">{{ region }}</td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
                     <td>{{ data.ingresos  }}</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
                     <td>{{ data.beneficios }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
                 </tr>
