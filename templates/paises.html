@@ -5,14 +5,14 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Global, S.L.</title>
             <!-- Estilos para la web en CSS-->
-            <link rel="stylesheet" href="/static/style.css"><!--Enlace a la página de estilos que contiene el CSS para dar formato a html-->
+            <link rel="stylesheet" href="/static/styleCountries.css"><!--Enlace a la página de estilos que contiene el CSS para dar formato a html-->
             <!--Hasta aquí estilos para la web en CSS-->
         </head>
         <body>
             <header>
                 GLOBAL, S.L.
             </header>
-            <h1>Ventas por región</h1>
+            <h1>Resumen ventas por país</h1>
             <table> 
                 <tr>
                     <th>Region</th>
@@ -21,9 +21,10 @@
                 </tr>
                 {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
                 <tr>
-                    <td class="region"><a href="http://127.0.0.1:5000/paises?region=Australia%20and%20Oceania" target="_self">{{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
+                    <td class="region">{{ region }}</td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
                     <td>{{ data.ingresos  }}</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
                     <td>{{ data.beneficios }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
+
                 </tr>
                 {% endfor %}
             </table>
@@ -32,9 +33,3 @@
             </footer>
         </body>
 </html>
-
-
-
-
-
-    

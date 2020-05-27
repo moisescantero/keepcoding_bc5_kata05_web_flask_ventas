@@ -1,0 +1,31 @@
+*{/*estilo genérico*/
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header, footer {/*estilo para cabecera y pie de página*/
+    padding: 10px;/*relleno entre los bordes y el texto*/
+    background-color: #462255;/*color de fondo*/
+    color: white;/*color del texto*/
+
+}
+table{/*estilo para la tabla*/
+    width: 80%;/*ancho de la tabla*/
+    margin: 10px auto;/*margen de la tabla con la página*/
+    border: 1px solid #645E9D;/*borde de la tabla*/
+}
+td, th{/*estilo para celda de datos(td) y celdas de cabecera(th)*/
+    border: 1px solid #645E9D;/*borde de la celda*/
+    padding: 2px;/*relleno entre borde de celda y texto*/
+    text-align: center;/*alineación del texto dentro de la celda*/
+}
+th{/*otro estilo solo para las celdas de cabecera*/
+    background-color: #645E9D;/*color de fondo*/
+    color: white;/*color del texto*/
+}
+
+.region{ /*estilo concreto creado para una clase(class="region" en paises.html) y poder modificar una td en concreto*/
+    font-weight: bold;/*estilo negrita para el texto*/
+    color: black;/*colo del texto*/
+    text-align: center;/*alineación del texto dentro de la celda*/
+}
