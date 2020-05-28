@@ -15,7 +15,7 @@
         <tr>
             <td class="region"><a href="/paises?region={{ region }}"> {{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
             <td>{{ data.ingresos | round(2, "floor") }}€</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
-            <td>{{ data.beneficios | round(2, "floor") }}€ }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
+            <td>{{ data.beneficios | round(2, "floor") }}€ </td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
         </tr>
         {% endfor %}
     </table>

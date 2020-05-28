@@ -4,7 +4,7 @@
 
 
 {% block contenido%}
-    <h1>Ventas en {{region_nm}} , deglosadas por país <a class="boton" href="/">Atrás</a> </h1>
+    <h1>Ventas en {{region_nm}} , deglosadas por país <a class="button button-primary" href="/">Atrás</a> </h1>
     <table> 
         <tr>
             <th>Region</th>
@@ -14,8 +14,8 @@
         {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
         <tr>
             <td class="region">{{region}}</td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
-            <td>{{ data.ingresos  }}</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
-            <td>{{ data.beneficios }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
+            <td>{{ data.ingresos | round(2, "floor") }}€ </td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
+            <td>{{ data.beneficios | round(2, "floor") }}€</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
 
         </tr>
         {% endfor %}
