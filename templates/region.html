@@ -21,6 +21,7 @@
                 </tr>
                 {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
                 <tr>
+                    <td class="region"><a href="/templates/paises.html" target="_self">{{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
                     <td class="region"><a href="http://127.0.0.1:5000/paises?region=Australia%20and%20Oceania" target="_self">{{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
                     <td>{{ data.ingresos  }}</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
                     <td>{{ data.beneficios }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
