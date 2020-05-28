@@ -35,7 +35,7 @@ def paises():
             else:#si no está en diccionario me lo creas y guardas region, ingresos y beneficios
                 d[linea[1]] = {"ingresos": float(linea[11]), "beneficios": float(linea[13])}
         
-    return render_template("paises.html", ventas=d)#método de flask para importar html y pasamos diccionario d a paises.html
+    return render_template("paises.html", ventas=d, region_nm=request.values["region"])#método de flask para importar html y pasamos diccionario d a paises.html
 
 
 

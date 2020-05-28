@@ -1,39 +1,25 @@
+{% extends "base.html" %}
 
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Global, S.L.</title>
-            <!-- Estilos para la web en CSS-->
-            <link rel="stylesheet" href="/static/style.css"><!--Enlace a la página de estilos que contiene el CSS para dar formato a html-->
-            <!--Hasta aquí estilos para la web en CSS-->
-        </head>
-        <body>
-            <header>
-                GLOBAL, S.L.
-            </header>
-            <h1>Ventas por región</h1>
-            <table> 
-                <tr>
-                    <th>Region</th>
-                    <th>Ventas</th>
-                    <th>Beneficios</th>
-                </tr>
-                {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
-                <tr>
-                    <td class="region"><a href="/templates/paises.html" target="_self">{{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
-                    <td class="region"><a href="http://127.0.0.1:5000/paises?region=Australia%20and%20Oceania" target="_self">{{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
-                    <td>{{ data.ingresos  }}</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
-                    <td>{{ data.beneficios }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
-                </tr>
-                {% endfor %}
-            </table>
-            <footer>
-                &copy; 2020 - Todos los derechos reservados.<!--esto es un entities para pintar el símbolo copyright-->
-            </footer>
-        </body>
-</html>
+{% block titulo %} Ventas por región {% endblock %}
 
+
+{% block contenido%}
+    <h1>Ventas por región</h1>
+    <table> 
+        <tr>
+            <th>Region</th>
+            <th>Ventas</th>
+            <th>Beneficios</th>
+        </tr>
+        {% for region, data in ventas.items() %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
+        <tr>
+            <td class="region"><a href="/paises?region={{ region }}"> {{ region }}</a></td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
+            <td>{{ data.ingresos | round(2, "floor") }}€</td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
+            <td>{{ data.beneficios | round(2, "floor") }}€ }}</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
 
 
 
