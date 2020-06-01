@@ -53,6 +53,11 @@ def productos():#consultar listado de productos
     return render_template("productos.html", productos=productos)
 
 
-@app.route("/addproducto")
+@app.route("/addproducto", methods=['GET', 'POST'])
 def addproducto():
-    return render_template('newproduct.html')
+    if request.method == 'GET':
+        return render_template('newproduct.html')
+    else:
+        return "Debo grabar un registro con {}, {}, {}". format(request.values['tipo_producto'],
+                                                                request.values['precio_unitario'],
+                                                                request.values['coste_unitario'])

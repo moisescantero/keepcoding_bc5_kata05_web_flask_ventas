@@ -4,7 +4,7 @@
 
 {% block contenido%}
     <h1>Alta de producto <a class="button button-primary" href="/">Atrás</a> </h1>
-    <form action="/addproducto">
+    <form action="/addproducto", method="post">
         <label for="tipo_producto">Tipo de producto:</label>
         <input type="text" name="tipo_producto" id="tipo_producto">
         <label for="precio_unitario">Precio de producto:</label>
