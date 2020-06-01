@@ -4,14 +4,14 @@
 
 {% block contenido%}
     <h1>Alta de producto <a class="button button-primary" href="/">Atrás</a> </h1>
-    <form action="/addproducto", method="post">
+    <form class="u-full-width" action="/addproducto", method="post">
         <label for="tipo_producto">Tipo de producto:</label>
-        <input type="text" name="tipo_producto" id="tipo_producto">
-        <label for="precio_unitario">Precio de producto:</label>
-        <input type="number" name="precio_unitario" id="precio_unitario" step="0.01">
-        <label for="coste_unitario">Coste de producto:</label>
-        <input type="number" name="coste_unitario" id="coste_unitario" step="0.01">
-        <input type="submit" value="Aceptar">
+        <input class="u-full-width" type="text" name="tipo_producto" id="tipo_producto">
+        <label for="precio_unitario">Precio unitario de producto:</label>
+        <input class="u-full-width" type="number" name="precio_unitario" id="precio_unitario" step="0.01">
+        <label for="coste_unitario">Coste unitario de producto:</label>
+        <input class="u-full-width" type="number" name="coste_unitario" id="coste_unitario" step="0.01"><br/>
+        <input type="submit" class="button-primary" value="Aceptar">
         
     
     </form>
