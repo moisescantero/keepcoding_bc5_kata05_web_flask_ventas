@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %} Listado de productos {% endblock %}
+
+{% block contenido%}
+    <h1>Lista de productos <a class="button button-primary" href="/">Atrás</a> </h1>
+    <table> 
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Coste Unitario</th>
+        </tr>
+        {% for producto in productos %}<!--bucle en jinja para obtener claves y valor de nuestro diccionario-->
+        <tr>
+            <td class="producto">{{ producto[1] }}</td><!--valor de region contenido en nuestro diccionario guardado en la variable region-->
+            <td>{{ producto[2] }}€ </td><!--valor de ingresos que hay en nuestro diccionario guardado en la variable data-->
+            <td>{{ producto[3] }}€</td><!--valor de beneficios que hay en nuestro diccionario guardado en la variable data-->
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
