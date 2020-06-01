@@ -3,8 +3,15 @@
 {% block titulo %} Alta de  productos {% endblock %}
 
 {% block contenido%}
-    <h1>Alta de producto <a class="button button-primary" href="/">Atrás</a> </h1>
+    <h1>Alta de producto </h1>
     <form class="u-full-width" action="/addproducto", method="post">
+        {{ form.tipo_producto(class="u-full-width") }}
+        {{ form.precio_unitario(class="u-full-width") }}
+        {{ form.coste_unitario(class="u-full-width") }}
+        {{ form.submit(class="button-primary") }}
+
+
+        <!--
         <label for="tipo_producto">Tipo de producto:</label>
         <input class="u-full-width" type="text" name="tipo_producto" id="tipo_producto">
         <label for="precio_unitario">Precio unitario de producto:</label>
@@ -12,7 +19,7 @@
         <label for="coste_unitario">Coste unitario de producto:</label>
         <input class="u-full-width" type="number" name="coste_unitario" id="coste_unitario" step="0.01"><br/>
         <input type="submit" class="button-primary" value="Aceptar">
-        
+        -->
     
     </form>
 {% endblock %}
