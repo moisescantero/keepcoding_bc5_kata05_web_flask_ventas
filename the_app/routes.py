@@ -3,13 +3,12 @@ from the_app import app
 from the_app.forms import ProductForm
 from flask import render_template, request, redirect, url_for
 
-BASE_DATOS = ("./data/ventas.db")
 
 
         
 @app.route("/")
 def index():
-    fVentas = open("./sales10.csv", "r")
+    fVentas = open(app.config["VENTAS"], "r")
     csvreader = csv.reader(fVentas, delimiter= ",")
 
     d = {}
@@ -27,7 +26,7 @@ def index():
 def paises():
     region_name = request.values["region"]
 
-    fVentas = open("./sales10.csv", "r")
+    fVentas = open(app.config["VENTAS"], "r")
     csvreader = csv.reader(fVentas, delimiter= ",")
 
     d = {}
@@ -45,7 +44,7 @@ def paises():
 @app.route("/productos")
 def productos():#consultar listado de productos
     
-    conn = sqlite3.connect(BASE_DATOS)
+    conn = sqlite3.connect(app.config["BASE_DATOS"])
     cur = conn.cursor()
 
     query = 'SELECT id, tipo_producto, precio_unitario, coste_unitario FROM productos;'
@@ -62,7 +61,7 @@ def addproducto():
     if request.method == 'GET':
         return render_template('newproduct.html', form=form)
     else:
-        conn = sqlite3.connect(BASE_DATOS)
+        conn = sqlite3.connect(app.config["BASE_DATOS"])
         cur = conn.cursor()
         query = "INSERT INTO productos (tipo_producto,precio_unitario,coste_unitario) VALUES (?,?,?);"
         datos = (request.values.get('tipo_producto'), request.values.get('precio_unitario'), request.values.get('coste_unitario'))
